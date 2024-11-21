@@ -1,6 +1,6 @@
-package com.mk.async.completablefuture;
+package com.mk.asynctest.completablefuture;
 
-import com.mk.async.threadpool.ThreadPoolUtil;
+import com.mk.asynctest.threadpool.ThreadPoolUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +41,7 @@ public class DrinkTea {
         CompletableFuture<Boolean> hotJob =
                 CompletableFuture.supplyAsync(() ->
                 {
-                    doWork("烧水", 5000, true);
+                    doWork("烧水", 5000, false);
                     return true;
                 }, drinkTeaPool).handle((res, ex) -> {
                     if (ex != null) {
